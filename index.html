@@ -50,7 +50,11 @@
     </main>
 
     <footer class="site-footer">
-      <p>Page By Nate Marinaccio</p>
+      <p>© <span id="year"></span> Nate Marinaccio</p>
     </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
