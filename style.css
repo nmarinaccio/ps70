@@ -235,3 +235,76 @@ a:focus-visible {
     transition: none !important;
   }
 }
+
+/* ===== About Page Layout ===== */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-media img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  display: block;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.about-text h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ===== Social Links ===== */
+.social-links {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.social-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.social-btn:hover,
+.social-btn:focus-visible {
+  transform: translateY(-3px);
+  background: var(--accent-2);
+}
+
+.social-btn svg {
+  width: 24px;
+  height: 24px;
+}
