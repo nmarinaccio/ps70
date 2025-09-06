@@ -1,106 +1,237 @@
+/* ========== Theme (ChatGPT-like dark) ========== */
+:root {
+  --bg: #0b0f19;            /* page background */
+  --bg-2: #101626;          /* slightly lighter surface */
+  --surface: #111827;       /* card/nav base */
+  --surface-2: #1f2937;     /* card hover/raised */
+  --text: #e5e7eb;          /* primary text */
+  --muted: #9ca3af;         /* secondary text */
+  --border: #243045;        /* subtle borders */
+  --accent: #10a37f;        /* ChatGPT-ish green */
+  --accent-2: #19b892;      /* hover accent */
+  --shadow: rgba(0,0,0,0.35);
+}
+
+/* Reset-ish & base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 body {
-    font: 20px "Gill Sans", Verdana, sans-serif;
-    line-height: 1.8;
-    color: #FFFFFF;
-    background-color: #000000;
-    padding-top: 0px !important;
-  }
-
-.textcontainer {
-  padding: 2% 10%;;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
 }
 
-p {font-size: 16px;}
-.margin {margin-bottom: 30px;}
-
-a {
-  color: #000000;
+/* ========== Header / Nav ========== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, var(--surface) 0%, rgba(17,24,39,0.92) 70%, rgba(17,24,39,0) 100%);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid var(--border);
 }
 
-.container-fluid {
-  padding: 0px;
-  /*padding-bottom: 70px;*/
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
 }
 
-nav {
-  background-color: #2c2929;
-  color: #EEE7E8;
-  padding: 50px 0px;
+.site-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
-.navbar-nav {
+/* center the nav by placing it in the middle grid column */
+.site-nav {
+  justify-self: center;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: flex-start;
-  gap: 30px;
+  gap: 10px;
 }
 
-.nav-title{
-  margin-left: 15px;
-  margin-right: 15px;
-  color: #000000;
+.nav-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #1a2233, #121a29);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease, color 140ms ease;
 }
 
-.nav-link {
-  border: 3px outset #a3a3a3;
-  border-radius: 20px;
-  padding: 10px 30px;
-  background-color: #a3a3a3;
-  color: #EEE7E8;
-  transition: 0.3s;
+.nav-btn:hover,
+.nav-btn:focus-visible {
+  transform: translateY(-1px);
+  border-color: #2f3f5f;
+  background: linear-gradient(180deg, #202a3f, #151e2f);
+  outline: none;
 }
 
-.nav-link:hover {
-  border: 3px outset #FFFFFF;
-  border-radius: 20px;
-  padding: 10px 30px;
-  background-color: #a3a3a3;
-  transition: 0.3s;
+.header-fade {
+  height: 14px; /* subtle fade into page */
+  background: linear-gradient(to bottom, rgba(17,24,39,0.6), rgba(11,15,25,0));
 }
 
-#btn {
-  border: 3px outset #FFFFFF;
-  border-radius: 40px;
-  padding: 10px 30px;
-  background-color: #a3a3a3;
-  color: #000000;
-  transition: 0.3s;
+/* ========== Main Content ========== */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
 }
 
-#btn:hover {
-  border: 3px inset #FFFFFF;
-  border-radius: 40px;
-  padding: 10px 30px;
-  background-color: #a3a3a3;
-  transition: 0.3s;
+.intro {
+  margin-bottom: 18px;
 }
 
-.row {
-  margin: auto auto;
+.intro-title {
+  margin: 0 0 6px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
-.flexrow {
+.intro-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* ========== Project Grid & Cards ========== */
+/* No more than 3 across on wide screens; collapses to 2/1 with breakpoints */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+@media (max-width: 980px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+.project-card {
+  position: relative;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(180deg, var(--bg-2), var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 260px;
+  box-shadow: 0 6px 16px -6px var(--shadow);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
-.center-row {
-  display: flex;
-  justify-content: center;
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -10px rgba(0,0,0,0.55);
+  border-color: #2f3f5f;
+  outline: none;
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
 }
 
-code {
-  background-color: #2d2b33;
-  color: #EEE7E8;
-  font-family: 'Courier New', Courier, monospace;
+/* Media (image) area keeps aspect ratio */
+.project-media {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #0f1422;
+  overflow: hidden;
 }
 
-.caption {
-  color: gray;
-  font-size: 16px;
+.project-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 14px 14px 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--text);
+}
+
+.project-blurb {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Optional accent strip on hover (subtle) */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+.project-card:hover::after,
+.project-card:focus-visible::after {
+  opacity: 0.7;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 26px 20px 50px;
   text-align: center;
-  font-style: italic;
 }
 
-#aboutme {
-  padding: 20px;
+/* ========== Accessibility niceties ========== */
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* High-contrast focus for buttons specifically */
+.nav-btn:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+/* Optional: reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .nav-btn,
+  .project-card,
+  .project-card::after {
+    transition: none !important;
+  }
 }
