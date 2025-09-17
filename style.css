@@ -334,3 +334,156 @@ a:focus-visible {
   font-weight: 700;
   color: var(--text);
 }
+
+/* =========================================================
+   WEEK LAYOUT UTILITIES (modular, reusable)
+   ========================================================= */
+
+/* Sections */
+.section { margin-top: 28px; }
+.section-title {
+  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.section-subtitle {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.section-intro,
+.section-body {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Media frames (images) */
+.media-frame {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px -6px var(--shadow);
+}
+.media-frame img {
+  width: 100%;
+  display: block;
+}
+.media-frame.wide img {
+  /* full-width hero images already stretch; this keeps style consistent */
+}
+.media-caption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* Prose container (text blocks that sit alongside images) */
+.prose { color: var(--muted); font-size: 1rem; }
+.prose .mini-title {
+  margin: 0 0 6px 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* Grid: thirds (image / text / image), collapses responsively */
+.grid-thirds {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr minmax(260px, 1fr) 1fr;
+  align-items: start;
+}
+@media (max-width: 980px) {
+  .grid-thirds { grid-template-columns: 1fr; }
+}
+
+/* Media + Text (alternating rows) */
+.media-text {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(260px, 1fr) 1fr;
+  align-items: start;
+  margin-top: 18px;
+}
+.media-text.reverse {
+  grid-template-columns: 1fr minmax(260px, 1fr);
+}
+.media-text.reverse > .media-frame { order: 2; }
+.media-text.reverse > .prose { order: 1; }
+
+@media (max-width: 820px) {
+  .media-text,
+  .media-text.reverse {
+    grid-template-columns: 1fr;
+  }
+  .media-text.reverse > .media-frame,
+  .media-text.reverse > .prose { order: initial; }
+}
+
+/* Callout / Download blocks (in-theme dark gray, complimentary) */
+:root {
+  --callout-bg: #0f1524;    /* darker gray-blue to complement theme */
+  --callout-border: #2b3954;/* subtle border for callouts */
+}
+
+.callout {
+  margin-top: 24px;
+  background: linear-gradient(180deg, var(--callout-bg), #0e1422);
+  border: 1px solid var(--callout-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px -10px rgba(0,0,0,0.5);
+}
+.callout-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+.callout-text { color: var(--muted); }
+.callout-title {
+  margin: 0 0 4px 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.callout-body { margin: 0; font-size: 0.98rem; }
+
+.btn-download {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #182238, #121a2a);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+  white-space: nowrap;
+}
+.btn-download:hover,
+.btn-download:focus-visible {
+  transform: translateY(-1px);
+  border-color: #2f3f5f;
+  background: linear-gradient(180deg, #202a3f, #151e2f);
+  outline: none;
+}
+
+@media (max-width: 620px) {
+  .callout-inner {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 10px;
+  }
+}
+
+/* Spacing helpers (reusable) */
+.mt-0 { margin-top: 0 !important; }
+.mt-8 { margin-top: 8px !important; }
+.mt-16 { margin-top: 16px !important; }
+.mt-24 { margin-top: 24px !important; }
+.mt-32 { margin-top: 32px !important; }

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 2 — 2D Design and Cutting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <!-- Nav/Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <h1 class="site-title">Nate Marinaccio — PS70 Fall 2025</h1>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-btn" href="../index.html">Home</a></li>
+            <li><a class="nav-btn" href="../about/about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-fade" aria-hidden="true"></div>
+    </header>
+
+    <main class="content">
+      <!-- Title + Intro -->
+      <section class="section">
+        <h2 class="section-title">Week 2: 2D Design and Cutting</h2>
+        <p class="section-intro">
+            This week, we focused on 2D/3D Design elements in Fusion as well as how to laser cut specific parts. 
+        </p>
+      </section>
+
+      <!-- Section 1 -->
+      <section class="section">
+        <h3 class="section-subtitle">3D Modeling</h3>
+        <p class="section-body">
+            
+        </p>
+      </section>
+
+      <!-- Screwdriver row (thirds: image / text / image) -->
+      <section class="section">
+        <div class="grid-thirds">
+          <figure class="media-frame">
+            <img src="./screwdriver.jpg" alt="Photo of a flathead screwdriver">
+            <figcaption class="media-caption">Reference: Flathead screwdriver</figcaption>
+          </figure>
+
+          <div class="prose">
+            <h4 class="mini-title">Flathead Screwdriver</h4>
+            <p>
+              I drafted the shaft and tip as a single revolve with a fillet at the neck,
+              then added a parametric handle profile and performed a revolve.
+              Dimensions are driven by a few key parameters so I can easily scale
+              or tweak ergonomics in future iterations.
+            </p>
+          </div>
+
+          <figure class="media-frame">
+            <img src="./cad_screwdriver.jpg" alt="CAD render of a flathead screwdriver">
+            <figcaption class="media-caption">CAD: Flathead screwdriver</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Screwdriver download callout -->
+      <section class="callout">
+        <div class="callout-inner">
+          <div class="callout-text">
+            <h4 class="callout-title">Download: Flathead Screwdriver CAD</h4>
+            <p class="callout-body">Fusion 360 archive of the screwdriver model.</p>
+          </div>
+          <a class="btn-download" href="./Pset2-Flathead.f3d" download>Download .f3d</a>
+        </div>
+      </section>
+
+      <!-- PVC row (thirds: image / text / image) -->
+      <section class="section">
+        <div class="grid-thirds">
+          <figure class="media-frame">
+            <img src="./pvc.jpg" alt="Photo of a PVC joint">
+            <figcaption class="media-caption">Reference: PVC joint</figcaption>
+          </figure>
+
+          <div class="prose">
+            <h4 class="mini-title">PVC Joint</h4>
+            <p>
+              The PVC joint started from orthographic sketches. I built the socket
+              and pipe interface with precise diameters and clearances, then created
+              fillets to match injection-molded geometry. The parameters let me
+              generate multiple nominal sizes without remodeling.
+            </p>
+          </div>
+
+          <figure class="media-frame">
+            <img src="./cad_pvc.jpg" alt="CAD render of a PVC joint">
+            <figcaption class="media-caption">CAD: PVC joint</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- PVC download callout -->
+      <section class="callout">
+        <div class="callout-inner">
+          <div class="callout-text">
+            <h4 class="callout-title">Download: PVC Joint CAD</h4>
+            <p class="callout-body">Fusion 360 archive of the PVC joint model.</p>
+          </div>
+          <a class="btn-download" href="./Pset2-PVCJoint.f3d" download>Download .f3d</a>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="section">
+        <h3 class="section-subtitle">Box Building</h3>
+      </section>
+
+      <!-- Full-width image -->
+      <section class="section">
+        <figure class="media-frame wide">
+          <img src="./box_full.jpg" alt="Full-width image of box prototype">
+          <figcaption class="media-caption">Prototype: Laser-cut box assembly</figcaption>
+        </figure>
+      </section>
+
+      <!-- Full-width paragraph -->
+      <section class="section">
+        <p class="section-body">
+          I designed a simple finger-jointed box and experimented with kerf compensation
+          and tab spacing. The goal was a snug fit that still assembles by hand without
+          splitting. I dialed in offsets and updated the DXF accordingly.
+        </p>
+      </section>
+
+      <!-- Alternating image + paragraph blocks -->
+      <section class="section">
+        <div class="media-text">
+          <figure class="media-frame">
+            <img src="./box_detail1.jpg" alt="Box detail 1">
+            <figcaption class="media-caption">Detail: finger joints</figcaption>
+          </figure>
+          <div class="prose">
+            <p>
+              Early joints were too tight; I added kerf offsets and widened tabs
+              slightly to reduce chipping on removal.
+            </p>
+          </div>
+        </div>
+
+        <div class="media-text reverse">
+          <figure class="media-frame">
+            <img src="./box_detail2.jpg" alt="Box detail 2">
+            <figcaption class="media-caption">Detail: lid alignment</figcaption>
+          </figure>
+          <div class="prose">
+            <p>
+              The lid alignment uses a shallow rebate that keys into the walls,
+              preventing lateral slop while keeping the lid removable.
+            </p>
+          </div>
+        </div>
+
+        <div class="media-text">
+          <figure class="media-frame">
+            <img src="./box_detail3.jpg" alt="Box detail 3">
+            <figcaption class="media-caption">Detail: base support</figcaption>
+          </figure>
+          <div class="prose">
+            <p>
+              I added a bottom support ring for rigidity; this also hides slight
+              imperfections on the base edges after sanding.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DXF download callout -->
+      <section class="callout">
+        <div class="callout-inner">
+          <div class="callout-text">
+            <h4 class="callout-title">Download: Box Outline</h4>
+            <p class="callout-body">DXF ready for laser cutting.</p>
+          </div>
+          <a class="btn-download" href="./NateMarinaccioBoxOutline2.dxf" download>Download .dxf</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nate Marinaccio</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
