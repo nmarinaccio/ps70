@@ -487,3 +487,18 @@ a:focus-visible {
 .mt-16 { margin-top: 16px !important; }
 .mt-24 { margin-top: 24px !important; }
 .mt-32 { margin-top: 32px !important; }
+
+/* ===== Week 3 small utilities (reusable) ===== */
+
+/* a thin, subtle divider to separate subsections within a section */
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  opacity: 0.6;
+  margin-top: 12px;
+}
+
+/* margin helpers (pairs with your existing spacing) */
+.mt-8 { margin-top: 8px !important; }
+.mt-16 { margin-top: 16px !important; }
+.mt-24 { margin-top: 24px !important; }

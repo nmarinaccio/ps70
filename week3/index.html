@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 3 — Kinetic Sculpture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <!-- Nav/Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <h1 class="site-title">Nate Marinaccio — PS70 Fall 2025</h1>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-btn" href="../index.html">Home</a></li>
+            <li><a class="nav-btn" href="../about/about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-fade" aria-hidden="true"></div>
+    </header>
+
+    <main class="content">
+      <!-- Page Title + Intro -->
+      <section class="section">
+        <h2 class="section-title">Week 3: Kinetic Sculpture</h2>
+        <p class="section-intro">
+          This week’s assignment was to design and build a small kinetic sculpture using basic hand tools
+          and laser-cut parts, then power it with simple circuitry (e.g., a DC motor and a supply). The goal
+          is to explore mechanisms, motion, and assembly while practicing documentation of process and results.
+          A short demo clip or GIF of the sculpture in action is encouraged as part of the write-up.
+        </p>
+      </section>
+
+      <!-- Section 1: page-wide image + paragraph -->
+      <section class="section">
+        <figure class="media-frame wide">
+          <!-- Use any representative ideation image here -->
+          <img src="./chairlift.jpg" alt="Early ideation reference image" />
+        </figure>
+        <p class="section-body mt-16">
+          I started by collecting ideas that could translate into repeatable motion with simple parts and
+          constraints. Below are three early directions I explored—each with different trade-offs in drive,
+          coupling, and build complexity.
+        </p>
+      </section>
+
+      <!-- Section 1: The Ideation Stage -->
+      <section class="section">
+        <h3 class="section-subtitle">The Ideation Stage</h3>
+
+        <!-- 1.1 The Chairlift -->
+        <div class="section-divider"></div>
+        <h4 class="mini-title mt-16">The Chairlift</h4>
+        <figure class="media-frame mt-8">
+          <img src="./chairlift.jpg" alt="Chairlift sketch/reference" />
+        </figure>
+        <p class="section-body mt-16">
+          When I first thought about a kinetic sculpture, I wanted to make something similar to a mechanism
+          I need for my final project: a motor pulling tension on a door handle via line. That led to a spinning
+          loop concept—combining sculpture with a ski-chairlift motif. But a few issues surfaced: preventing
+          belt/line slip on the loop, maintaining an uphill incline, and fabricating a robust motor connector
+          without 3D printing. Those risks made this path less attractive.
+        </p>
+
+        <!-- 1.2 The Moving Sidewalk -->
+        <div class="section-divider"></div>
+        <h4 class="mini-title mt-16">The Moving Sidewalk</h4>
+        <figure class="media-frame mt-8">
+          <img src="./movingSidewalk.jpg" alt="Moving sidewalk concept" />
+        </figure>
+        <p class="section-body mt-16">
+          Next, I considered a wider belt with a textured surface to shuttle objects and “kick” them off an end stop.
+          This would address slipping and incline issues, but the motor coupling—again without 3D-printed hubs—remained
+          finicky. Doable, but not how I wanted to spend the week.
+        </p>
+
+        <!-- 1.3 The Dancing Tree -->
+        <div class="section-divider"></div>
+        <h4 class="mini-title mt-16">The Dancing Tree</h4>
+        <figure class="media-frame mt-8">
+          <img src="./dancingTree.jpg" alt="Dancing tree sketch/reference" />
+        </figure>
+        <p class="section-body mt-16">
+          After a very busy week, I pivoted to a decorative “dancing tree.” The idea was to get a simple,
+          reliable motion working first—then layer on flair (figurines, ornaments) later. Function first, polish second.
+        </p>
+      </section>
+
+      <!-- Section 2: The Development -->
+      <section class="section">
+        <h3 class="section-subtitle">The Development</h3>
+
+        <!-- 2.1 text left, image right -->
+        <div class="media-text mt-16">
+          <div class="prose">
+            <p>
+              Starting with the CAD, I made concentric circles 40&nbsp;mm thick from the outside inward,
+              with a 5&nbsp;mm center bore for the dowel. I then designed gear-shaped central holders
+              (kept for aesthetics) and added arms for each level, rotated 90° between tiers.
+            </p>
+          </div>
+          <figure class="media-frame">
+            <img src="./cad.jpg" alt="CAD of the kinetic sculpture" />
+          </figure>
+        </div>
+
+        <!-- Download callout -->
+        <section class="callout mt-24">
+          <div class="callout-inner">
+            <div class="callout-text">
+              <h4 class="callout-title">Download: Kinetic Sculpture CAD</h4>
+              <p class="callout-body">Fusion 360 archive of the “dancing tree” model.</p>
+            </div>
+            <a class="btn-download" href="./keneticSculpture.f3d" download>Download .f3d</a>
+          </div>
+        </section>
+
+        <!-- 2.2 image left, text right -->
+        <div class="media-text mt-24">
+          <figure class="media-frame">
+            <img src="./core.jpg" alt="Core assembly on the dowel" />
+          </figure>
+          <div class="prose">
+            <p>
+              After cutting, I mounted the system on a 5.5&nbsp;mm dowel. A snug fit was achieved
+              by reducing the hole slightly with cardboard. I cut a slit at the dowel base to mate with the
+              motor’s output shape, then assembled the motor, arms, and dowel with careful spacing and hot glue.
+              First test: success.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2.3 image right, text left -->
+        <div class="media-text reverse mt-24">
+          <figure class="media-frame">
+            <img src="./base.jpg" alt="Support base and motor housing" />
+          </figure>
+          <div class="prose">
+            <p>
+              The structure needed to support both the motor and rotating tree while clearing a dual-ended shaft.
+              I built a two-chamber box: the top cradles the motor and provides through-slots for the axle; the
+              bottom can house a future battery pack. Final touches included a zip tie for restraint and a centering
+              slit to keep the tree aligned.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Final Product (full-width image + paragraph) -->
+      <section class="section">
+        <h3 class="section-subtitle">Final Product</h3>
+        <figure class="media-frame wide mt-16">
+          <img src="./final.jpg" alt="Final kinetic sculpture" />
+        </figure>
+        <p class="section-body mt-16">
+          Here’s the result. I only had time to paint stripes on one tier, and there’s room for more décor,
+          but the motion works reliably! Next steps: switch to wood for stiffness, slightly widen the support arms,
+          and add decorative elements. For a one-week build, I’m happy with how it turned out.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nate Marinaccio</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
