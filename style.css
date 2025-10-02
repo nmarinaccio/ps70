@@ -543,3 +543,23 @@ a:focus-visible {
     justify-content: start;
   }
 }
+
+/* Flex row for small side-by-side images */
+.image-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.media-frame.small {
+  max-width: 250px;   /* adjust as needed */
+  flex: 1 1 auto;
+}
+
+.media-frame.small img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}

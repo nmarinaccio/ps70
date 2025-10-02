@@ -56,23 +56,24 @@
           As with any engineering project, this project did not go right for the first few times before finally getting it! There was a significant amount of debugging to be done. A majority of this debugging resulted in the fact that I am unfamiliar with the ESP32. I ended up using pins (including the Memory Pins and the TX pin) that should not be used on the ESP32. I started with a really complicated code file that made use of classes (because I had never used them before and I wanted to become familiar). This did not work. So, I removed all the mentions of classes. Did not work. Finally, I just started testing components individually. Only after I did that, I was able to rule out all of the components having issues (after a relay hot swap) except the board. Now, I thought the entire board was having an issue. However, Bobby helped me figure out that my specific pinout was causing issues.
         </p>
 
-        <!-- 3-up gallery: Classes, WithoutClasses, Debugging -->
-        <div class="gallery-3 mt-16">
-          <figure class="media-frame fixed-200">
+        <!-- Code images row -->
+        <div class="image-row mt-16">
+            <figure class="media-frame small">
             <img src="./classes.jpg" alt="Original code with classes">
             <figcaption class="media-caption">This is the original code that I wrote before even plugging in the ESP32. I was super optimistic and included classes.</figcaption>
-          </figure>
-
-          <figure class="media-frame fixed-200">
+            </figure>
+        
+            <figure class="media-frame small">
             <img src="./withoutClasses.jpg" alt="Code without classes">
             <figcaption class="media-caption">I then thought that after it didn’t work, it was because I added classes. I removed the mention of classes and tried again. It didn’t work.</figcaption>
-          </figure>
-
-          <figure class="media-frame fixed-200">
+            </figure>
+        
+            <figure class="media-frame small">
             <img src="./debugging.jpg" alt="Debugging process photo">
             <figcaption class="media-caption">After the code I knew should work didn’t, I started debugging.</figcaption>
-          </figure>
+            </figure>
         </div>
+  
 
         <!-- Downloads row -->
         <div class="downloads-grid3 centered mt-16">
@@ -90,17 +91,18 @@
         </p>
 
         <!-- 3 images in a row: Green, Yellow, Red -->
-        <div class="gallery-3 mt-16">
-          <figure class="media-frame fixed-200">
+        <div class="image-row mt-16">
+            <figure class="media-frame small">
             <img src="./green.jpg" alt="Green LED state">
-          </figure>
-          <figure class="media-frame fixed-200">
+            </figure>
+            <figure class="media-frame small">
             <img src="./yellow.jpg" alt="Yellow LED state">
-          </figure>
-          <figure class="media-frame fixed-200">
+            </figure>
+            <figure class="media-frame small">
             <img src="./red.jpg" alt="Red LED state">
-          </figure>
+            </figure>
         </div>
+  
 
         <p class="section-body mt-16">
           Overall, I am happy with how the project turned out. In the future, I would adjust the lighting system and duty cycle values to better match the color of lights (green being moving at an okay speed and red being too fast).
