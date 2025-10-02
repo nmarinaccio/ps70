@@ -531,11 +531,12 @@ a:focus-visible {
 
 /* 3-up downloads row under a gallery */
 .downloads-grid3 {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, max-content);
-  justify-content: space-between;
+  display: flex;
+  gap: 16px;
+  justify-content: center; /* center the buttons */
+  flex-wrap: wrap;
 }
+
 @media (max-width: 980px) {
   .downloads-grid3 {
     grid-template-columns: 1fr;
