@@ -502,3 +502,43 @@ a:focus-visible {
 .mt-8 { margin-top: 8px !important; }
 .mt-16 { margin-top: 16px !important; }
 .mt-24 { margin-top: 24px !important; }
+
+/* ===== Reusable 3-up gallery and helpers ===== */
+.gallery-3 {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 980px) {
+  .gallery-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .gallery-3 { grid-template-columns: 1fr; }
+}
+
+/* Fix image height inside a media-frame while preserving cover crop */
+.media-frame.fixed-200 img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Center a block (useful for tall/vertical images) */
+.centered {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* 3-up downloads row under a gallery */
+.downloads-grid3 {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: space-between;
+}
+@media (max-width: 980px) {
+  .downloads-grid3 {
+    grid-template-columns: 1fr;
+    justify-content: start;
+  }
+}
