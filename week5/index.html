@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 5 — 3D Modeling and Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <!-- Nav/Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <h1 class="site-title">Nate Marinaccio — PS70 Fall 2025</h1>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-btn" href="../index.html">Home</a></li>
+            <li><a class="nav-btn" href="../about/about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-fade" aria-hidden="true"></div>
+    </header>
+
+    <main class="content">
+      <!-- Title + Intro -->
+      <section class="section">
+        <h2 class="section-title">Week 5</h2>
+        <p class="section-body">
+          This week, we focused on 3d modeling and design. We practiced turning sketches into parametric parts,
+          exporting printable geometry, and thinking about tolerances, orientation, supports, and infill. We also
+          touched on scanning an object and cleaning the mesh for possible remixing.
+        </p>
+      </section>
+
+      <!-- Hocanopoly Board Game Pieces -->
+      <section class="section">
+        <h3 class="section-subtitle">Hocanopoly Board Game Pieces</h3>
+        <p class="section-body">
+          Last year, while I was hiking with some friends from the Harvard Outing Club (HOC), we had the idea to make a HOC themed monopoly. I spent time at the SEC laser cutting, painting, and printing the cards for the game. It worked extremely well and was a ton of fun. We played many times, but something was missing: the pieces. I have been wanting to make custom pieces for the game for quite some time. I decided to make 4 pieces. The first is an outhouse. At our cabin, we have a notoriously interesting outhouse, so I wanted to make a small model of that. Second, I wanted to create a nalgene waterbottle. HOC is also known internally for its “icing” bits using smirnoff ice, so I desinged an ice bottle. Finally, as it is the internal symbol of HOC, I needed to model our wedge of power. I think they turned out really well and were loved by everyone who has played the game since.
+        </p>
+
+        <!-- 2x2 images, each with its download -->
+        <div class="gallery-2x2 mt-16">
+          <figure class="media-frame square">
+            <img src="./outHouse.jpg" alt="Hocanopoly piece: outhouse">
+            <figcaption class="media-caption">Outhouse</figcaption>
+            <div class="mt-8" style="padding: 0 12px 12px;">
+              <a class="btn-download" href="./outHouse.f3d" download>Download outHouse.f3d</a>
+            </div>
+          </figure>
+
+          <figure class="media-frame square">
+            <img src="./nalgene.jpg" alt="Hocanopoly piece: nalgene">
+            <figcaption class="media-caption">Nalgene</figcaption>
+            <div class="mt-8" style="padding: 0 12px 12px;">
+              <a class="btn-download" href="./nalgene.f3d" download>Download nalgene.f3d</a>
+            </div>
+          </figure>
+
+          <figure class="media-frame square">
+            <img src="./ice.jpg" alt="Hocanopoly piece: ice bottle">
+            <figcaption class="media-caption">Ice bottle</figcaption>
+            <div class="mt-8" style="padding: 0 12px 12px;">
+              <a class="btn-download" href="./ice.f3d" download>Download ice.f3d</a>
+            </div>
+          </figure>
+
+          <figure class="media-frame square">
+            <img src="./wedgeOfPower.jpg" alt="Hocanopoly piece: wedge of power">
+            <figcaption class="media-caption">Wedge of power</figcaption>
+            <div class="mt-8" style="padding: 0 12px 12px;">
+              <a class="btn-download" href="./wedgeOfPower.f3d" download>Download wedgeOfPower.f3d</a>
+            </div>
+          </figure>
+        </div>
+
+        <!-- Final print full-width -->
+        <figure class="media-frame wide mt-24">
+          <img src="./finalPrint.jpg" alt="Final 3D printed set of Hocanopoly pieces">
+          <figcaption class="media-caption">The final output</figcaption>
+        </figure>
+      </section>
+
+      <!-- 3D Scanning -->
+      <section class="section">
+        <h3 class="section-subtitle">3d Scanning</h3>
+        <p class="section-body">
+          The next part of this assignment was the 3d scan something. I had a ton of difficulty with this. I tried my own 3d prints, other random items, and finally the example model. It took quite some time to find an object that worked. I believe that my prints were too small and that the watch I tried was too reflective. After trying mutlple settings and even the wrong program, I was able to get this scan.
+        </p>
+
+        <figure class="media-frame mt-16">
+          <img src="./scan.jpg" alt="3D scan result">
+          <figcaption class="media-caption">Scan result</figcaption>
+        </figure>
+
+        <section class="callout mt-16">
+          <div class="callout-inner">
+            <div class="callout-text">
+              <h4 class="callout-title">Download: 3D Scan</h4>
+              <p class="callout-body">Mesh for review or remix.</p>
+            </div>
+            <a class="btn-download" href="./nmScan_pc.obj" download>Download .obj</a>
+          </div>
+        </section>
+
+        <p class="section-body mt-16">
+          It was really cool to learn, but I don’t think that I will be using this technology for my final project or other projects in the near future.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nate Marinaccio</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
