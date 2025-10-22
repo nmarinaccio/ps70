@@ -584,3 +584,38 @@ a:focus-visible {
 
 /* small spacing helper already used above */
 .mt-24 { margin-top: 24px !important; }
+
+/* ===== Download cards (reusable) ===== */
+.download-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 820px) {
+  .download-grid { grid-template-columns: 1fr; }
+}
+
+.download-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: linear-gradient(180deg, var(--bg-2), var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px -6px var(--shadow);
+}
+
+.download-card__title {
+  margin: 0 0 4px 0;
+  font-size: 1.02rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.download-card__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}

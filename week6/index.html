@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 6 — Input Devices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <!-- Nav/Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <h1 class="site-title">Nate Marinaccio — PS70 Fall 2025</h1>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-btn" href="../index.html">Home</a></li>
+            <li><a class="nav-btn" href="../about/about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-fade" aria-hidden="true"></div>
+    </header>
+
+    <main class="content">
+      <!-- Title + Intro -->
+      <section class="section">
+        <h2 class="section-title">Week 6: Input Devices</h2>
+        <p class="section-body">
+          Week 6 was all about input devices: what they are in their most basic form, how to use them, and fun projects with them. We started on Tuesday covering general sensors and then moved to looking at capacitance on Thursday.
+          In addition to building a custom capacitive sensor, we were asked to configure at least one other sensor and include an output device. We also practiced collecting and plotting data, and wrote non-blocking code that avoids <code>delay()</code> in favor of timers or structured logic.
+        </p>
+      </section>
+
+      <!-- Capacitive Sensor -->
+      <section class="section">
+        <h3 class="section-subtitle">Capacitive Sensor</h3>
+        <p class="section-body">
+          When thinking about capacitance and capacitors, I always invision a parallel plate capacitor. It is probably because that is the simplest and easiest to teach in an eletricity and magnitism class. However, it was super interesting to realize that almost everything has some level of capacitance and that can be detected. One capcitor that was mentioned on Thursday’s class was the human body. I found this to be super cool, so I decided to make a person detector. I lined two copper plates next to one another but not touching. I then placed my hand specific distances above the sensor to measure the values returned by using the native capacitor code provided to us.
+        </p>
+
+        <p class="section-body mt-16">This is the graph produced when mapping the distance above to the output:</p>
+        <figure class="media-frame mt-8">
+          <img src="./output-2.png" alt="Capacitive sensor output vs distance">
+        </figure>
+        <p class="section-body mt-16">
+          It is super interesting to see a substantial dropoff in change. The graph seems almost logorithmic. However, this can work to detect hands for sure!
+        </p>
+      </section>
+
+      <!-- Data Transmission using LEDs -->
+      <section class="section">
+        <h3 class="section-subtitle">Data Transmission using LEDs</h3>
+        <p class="section-body">
+          I then wanted to make a device that made use of LEDs and the photo resistor to transmit data. When the light is on, it can be read as a 1, when it is off, a 0. First, though, I had to figure out some parameters. I turned on the LED and then decided to measure the analog input of the voltage drop across the photoresistor compared to distance. This is what I got:
+        </p>
+
+        <figure class="media-frame mt-16">
+          <img src="./prDistGraph.jpg" alt="Photoresistor analog reading over time while changing distance">
+          <figcaption class="media-caption">
+            This image maps the analog output of the photoresistor to distance (the x-axis is time, though)
+          </figcaption>
+        </figure>
+
+        <p class="section-body mt-16">
+          After seeing this data, I decided the LED should just be as close as possible to the photoresistor to get the best result. I set up a circuit to start testing with transmission.
+        </p>
+
+        <figure class="media-frame mt-16">
+          <img src="./transCircuit.jpg" alt="Transmission circuit using LED and photoresistor">
+        </figure>
+
+        <!-- Download cards -->
+        <div class="download-grid mt-16">
+          <div class="download-card">
+            <div class="download-card__text">
+              <h4 class="download-card__title">transmisCircuitDelay.ino</h4>
+              <p class="download-card__desc">Blocking test version that uses delay for timing.</p>
+            </div>
+            <a class="btn-download" href="./transmisCircuitDelay.ino" download>Download</a>
+          </div>
+
+          <div class="download-card">
+            <div class="download-card__text">
+              <h4 class="download-card__title">trasmisCircuitNoDelay.ino</h4>
+              <p class="download-card__desc">Non-blocking version that avoids delay and uses state timing.</p>
+            </div>
+            <a class="btn-download" href="./trasmisCircuitNoDelay.ino" download>Download</a>
+          </div>
+        </div>
+
+        <p class="section-body mt-16">
+          I then sent a maybe recognizeable speach across light, and IT WORKED!
+        </p>
+      </section>
+
+      <!-- Sensor Schematics -->
+      <section class="section">
+        <h3 class="section-subtitle">Sensor Schematics</h3>
+
+        <figure class="media-frame mt-16">
+          <img src="./capSense.jpg" alt="Capacitive sensor schematic">
+          <figcaption class="media-caption">
+            Capacitive Sensor Schematic (<a href="https://www.researchgate.net/figure/a-Parallel-plate-capacitor-b-Interdigitated-capacitor_fig1_3431987" target="_blank" rel="noopener">Source</a>)
+          </figcaption>
+        </figure>
+
+        <figure class="media-frame mt-16">
+          <img src="./prSchem.jpg" alt="Photoresistor voltage divider schematic">
+          <figcaption class="media-caption">
+            Photoresistor Schematic (<a href="https://rheingoldheavy.com/measuring-a-photoresistor-circuit/" target="_blank" rel="noopener">Source</a>)
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nate Marinaccio</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
