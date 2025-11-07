@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 8 — CNC + Post-Processing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <!-- Nav/Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <h1 class="site-title">Nate Marinaccio — PS70 Fall 2025</h1>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-btn" href="../index.html">Home</a></li>
+            <li><a class="nav-btn" href="../about/about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-fade" aria-hidden="true"></div>
+    </header>
+
+    <main class="content">
+      <!-- Hero image -->
+      <section class="section">
+        <figure class="media-frame wide">
+          <img src="./cnc.jpg" alt="ShopBot CNC in use">
+        </figure>
+      </section>
+
+      <!-- Intro -->
+      <section class="section">
+        <p class="section-body">
+          This week I learned the flow for CNC work on the ShopBot: preparing stock, fixturing, setting XY and Z,
+          and running toolpaths safely. It was a good reminder that CNC is as much about planning as it is about
+          cutting. Post processing opens up a lot of finish options—sanding, edge breaks, stains, and oils—to take a
+          rough cut to a presentable object. It also taught me to think about grain direction, tool geometry, and where
+          tabs and ramps live so cleanup is fast and the parts still look sharp.
+        </p>
+      </section>
+
+      <!-- CNCed Coasters -->
+      <section class="section">
+        <h3 class="section-subtitle">CNCed Coasters</h3>
+        <p class="section-body">
+          I wanted to make a Christmas gift for my mom and she loves strange looking coasters so I decided to make them.
+          I started in CAD to make sure they all fit together and to form the shapes. I then moved on to actually making them.
+          I have yet to stain them, but I intend to do so before Christmas.
+        </p>
+
+        <!-- Side-by-side CAD images -->
+        <div class="gallery-2x2 mt-16">
+          <figure class="media-frame">
+            <img src="./coaster_cad2d.jpg" alt="Coaster CAD 2D layout">
+            <figcaption class="media-caption">2D layout</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <img src="./coaster_cad3d.jpg" alt="Coaster CAD 3D view">
+            <figcaption class="media-caption">3D view</figcaption>
+          </figure>
+        </div>
+
+        <!-- Download button -->
+        <div class="downloads-grid3 mt-16">
+          <a class="btn-download" href="./cnc_coasters.f3d" download>Download: cnc_coasters.f3d</a>
+        </div>
+
+        <p class="section-body mt-16">
+          I had some difficulty at first with the CAD as I knew they wouldn’t fit together if it was all one shape.
+          Bobby helped me separate them by first making all the coasters their own 3D object before reverting back to 2D.
+        </p>
+
+        <figure class="media-frame mt-16">
+          <img src="./coasters.jpg" alt="CNCed wood coasters">
+          <figcaption class="media-caption">Fresh off the machine (pre-stain)</figcaption>
+        </figure>
+
+        <p class="section-body mt-16">
+          They came out pretty well and I look forward to finalizing them.
+        </p>
+      </section>
+
+      <!-- Fidget Toy -->
+      <section class="section">
+        <h3 class="section-subtitle">Figit Toy</h3>
+        <p class="section-body">
+          Because this week was about post processing as well as CNCing, I wanted to make a silicone figit toy.
+          I decided to make spikes as I thought they would feel funny. I started by 3D printing the negative
+          and then cast the silicone into the negative. It worked pretty well.
+        </p>
+
+        <figure class="media-frame mt-16">
+          <img src="./figitCad.jpg" alt="Fidget toy negative (CAD/print)">
+          <figcaption class="media-caption">CAD / printed negative</figcaption>
+        </figure>
+
+        <div class="downloads-grid3 mt-16">
+          <a class="btn-download" href="./figitToy.f3d" download>Download: figitToy.f3d</a>
+        </div>
+
+        <figure class="media-frame mt-16">
+          <img src="./figitCast.jpg" alt="Silicone cast of fidget toy">
+          <figcaption class="media-caption">Silicone cast result</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nate Marinaccio</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
