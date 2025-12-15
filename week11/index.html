@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Final Project — Doormaster 3000</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <!-- Nav/Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <h1 class="site-title">Nate Marinaccio — PS70 Fall 2025</h1>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-btn" href="../index.html">Home</a></li>
+            <li><a class="nav-btn" href="../about/about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-fade" aria-hidden="true"></div>
+    </header>
+
+    <main class="content">
+      <!-- Main title -->
+      <section class="section">
+        <h2 class="section-title" style="text-align:center;">Doormaster 3000</h2>
+      </section>
+
+      <!-- YouTube embed -->
+      <section class="section">
+        <figure class="media-frame wide">
+          <iframe
+            width="100%"
+            height="480"
+            src="https://www.youtube.com/embed/7_vMb9rOUg8"
+            title="Doormaster 3000 Final Project"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="display:block;border:0;"
+          ></iframe>
+        </figure>
+      </section>
+
+      <!-- Intro paragraph -->
+      <section class="section">
+        <p class="section-body">
+          During freshman year, I lived in a suite in Canaday. We lived in the kind of suite that had a community
+          around it. People who lived there and who didn’t live there made it their home and would come and go.
+          Unfortunately we also had issues with break ins. I thought to myself that it could be amazing if only there
+          was a way to make it so we could grant people timed access and unlock the door digitally. This would allow
+          the people we want to come and go as they please without needing a key, but keeping the door locked. Two years
+          later, as a junior, I still thought that concept was cool. I’ve never been a big key carrier and my roomate and
+          I would always leave our key in our door. Earlier this year, our neighbor was broken into because they too left
+          their key outside. With the support of PS-70, I decided that enough was enough, and, as “simple” (not really
+          unfortunately) and common of a project it was, I wanted to make a smart dorm door to open from my phone. First
+          I thought of two possible ideas for the door. I could either use a cable and pulley style system, or a more rigid
+          lead screw and motor style system.
+        </p>
+      </section>
+
+      <!-- Sketch images side by side -->
+      <section class="section">
+        <div class="gallery-2x2">
+          <figure class="media-frame">
+            <img src="./door-sketch1.jpg" alt="Door mechanism sketch 1" />
+          </figure>
+          <figure class="media-frame">
+            <img src="./door-sketch2.jpg" alt="Door mechanism sketch 2" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Paragraph about design choice -->
+      <section class="section">
+        <p class="section-body">
+          While the lead screw or rigid piston did come with some advantages such as increasing torque naturally and not
+          having to worry about cable alignment, it also had tradeoffs. Using the lead screw would pretty much make it
+          impossible to use the door handle regularly from the inside. This is why I decided to go with the pulley system.
+        </p>
+      </section>
+
+      <!-- MVP image -->
+      <section class="section">
+        <div class="centered">
+          <figure class="media-frame">
+            <img src="./mvp.png" alt="Doormaster 3000 MVP prototype" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- MVP paragraph -->
+      <section class="section">
+        <p class="section-body">
+          For my MVP, I printed a housing for the device to minimize visible wiring and allow for a lot of the action to be
+          “behind the scenes.” At this stage, I still was using both a 5V source and a 12V source independently. I also added
+          two inputs as my networking had not been done yet. I added a do not disturb switch which closes the door and
+          prevents any additional movement and a bathroom button which holds the door open for 15 mins while you use the
+          bathroom. At this point, everything was still connected on a breadboard.
+        </p>
+      </section>
+
+      <!-- Solder image -->
+      <section class="section">
+        <figure class="media-frame">
+          <img src="./solder.png" alt="Electronics soldered and wired for Doormaster 3000" />
+        </figure>
+      </section>
+
+      <!-- Solder / iteration paragraph -->
+      <section class="section">
+        <p class="section-body">
+          So, the next steps included adding a buc converter to make it so I only needed a single 12V source which were later
+          split between 12V and 5V. Next I put all the components onto a soldered breadboard to more securely form the
+          connections. Finally I implemented the networking. In my eyes, the device was pretty much done. However, I didn’t
+          realize that the next part would be challenging: attaching it to my door. Now in the initial image, you can see
+          that there is an emergency exit poster on the door. This makes two screw holes that I can use if I remove the
+          poster! Easy! However, I unfortunately did not do adequate testing up to this point and found out that my device
+          did not have enough torque to open the door. To fix this problem, I designed a timing-belt gear system. This added
+          a bunch of torque and centered the enclosure to decrease the chance of it falling off the door. This thankfully
+          worked and has been unlocking and locking my door ever since!
+        </p>
+      </section>
+
+      <!-- On-door image -->
+      <section class="section">
+        <figure class="media-frame">
+          <img src="./onDoor.png" alt="Doormaster 3000 mounted on the door" />
+        </figure>
+      </section>
+
+      <!-- Thank you paragraph -->
+      <section class="section">
+        <p class="section-body">
+          I want to thank all of the PS70 staff and my classmates. Without their help this wouldn’t have been possible and I
+          love that I was able to get this project that I had been thinking about for years complete. Thank you all!!!
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nate Marinaccio</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
